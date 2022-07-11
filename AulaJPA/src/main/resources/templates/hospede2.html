@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>Hospedes</title>
+</head>
+<body>
+	<h1>Lista de Hospedes</h1>
+	<table width='80%' border="1">
+		<thead>
+			<tr bgcolor='#c0c0c0'>
+				<th>ID</th>
+				<th>NOME</th>
+				<th>E-MAIL</th>
+				<th>CPF</th>
+
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr th:each="hospede : ${listaHospedes}">
+				<td th:text="${hospede.id}">ID</td>
+				<td th:text="${hospede.nome}">NOME</td>
+				<td th:text="${hospede.email}">E-MAIL</td>
+				<td th:text="${hospede.cpf}">CPF</td>
+
+			</tr>
+
+		</tbody>
+
+	</table>
+	<a class="btn btn-sm btn-success" th:href="@{adicionar}">Cadastrar</a>
+</body>
+</html>
