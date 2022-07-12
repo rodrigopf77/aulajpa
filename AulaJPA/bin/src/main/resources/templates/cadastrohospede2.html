@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>Cadastrar Hospede</title>
+</head>
+<body>
+
+	<h1>Cadastrar Hospede</h1>
+	<hr>
+	<form th:object="${hospede}" th:action="@{/hospede/save}" method="POST" style="margin: 10px">
+
+		<label>Nome</label><br> 
+		<input id="nome" th:field="*{nome}"	placeholder="João da Silva"> 
+		<br>
+		<label>E-mail</label><br>
+		<input id="email" th:field="*{email}" placeholder="Ex.: email@dominio.com.br">
+		<br>
+		<label>Cpf</label><br>
+		<input id="cpf" th:field="*{cpf}" placeholder="Digite o cpf">
+		<br>
+		<button style='text-align: center' type="submit" class="btn btn-success">Salvar</button>
+		
+		| <a class="btn btn-sm btn-success" th:href="@{/hospede/listar}">Lista de Hospedes</a>
+
+
+	</form>
+
+</body>
+</html>
